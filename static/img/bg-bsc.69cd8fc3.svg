@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="343px" height="148px" viewBox="0 0 343 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>BNB</title>
+    <defs>
+        <linearGradient x1="0%" y1="40.6909536%" x2="100%" y2="59.3090464%" id="linearGradient-1">
+            <stop stop-color="#2F323D" offset="0%"></stop>
+            <stop stop-color="#0B101D" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="343" height="148" rx="10"></rect>
+    </defs>
+    <g id="avedex" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="资产-m端备份" transform="translate(-16.000000, -160.000000)">
+            <g id="BNB" transform="translate(16.000000, 160.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="蒙版" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <g opacity="0.0969976381" mask="url(#mask-3)" fill="#878FBC" fill-rule="nonzero">
+                    <g transform="translate(225.000000, 50.000000)">
+                        <polygon id="Fill-160" points="59.3310515 73.5604037 45.1239963 59.3540724 59.3310515 45.1470172 73.5381067 59.3540724"></polygon>
+                        <polygon id="Fill-162" points="91.6164307 59.3540724 91.5563448 59.4134344 104.733253 72.5896184 117.968799 59.3540724 104.642038 46.0265877 91.4651301 59.2027718"></polygon>
+                        <polygon id="Fill-164" points="36.4958798 49.9034307 59.3306896 27.0686209 82.5014012 50.2393325 95.6775853 37.0631485 59.3306896 0.716252761 23.3196957 36.7272466"></polygon>
+                        <polygon id="Fill-166" points="82.5928331 68.3776699 59.3309067 91.6395963 36.2752994 68.583265 23.0991153 81.7594491 59.3309067 117.991964 95.7690172 81.553854"></polygon>
+                        <polygon id="Fill-168" points="27.0456 59.3540724 27.5320785 58.8675939 14.3558945 45.6906859 0.693231902 59.3540724 14.1350969 72.7959374 27.311281 59.6197534"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
