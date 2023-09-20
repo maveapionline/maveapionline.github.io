@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" viewport-fit=cover>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <title>Ave.ai</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      line-height: 1.15; /* 1 */
+      -webkit-text-size-adjust: 100%; /* 2 */
+      font-family: "Poppins-Regular", "Haas Grot Text R", "PingFangSC-Regular", "Helvetica Neue", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+    }
+    *{ box-sizing: border-box;}
+    html {
+      --max-width: 500px;
+    }
+    body {
+      background-color: #1c5ff4;
+    }
+    ul,li{
+      margin: 0;
+      padding:0;
+      list-style: none;
+    }
+    .download-container {
+      min-height: 100vh;
+      width: 100%;
+      /* max-width: 600px; */
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: url(./download.png);
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center top;
+      background-color: #285efd;
+    }
+    .label {
+      font-size: 16px;
+      color: #fff;
+      padding: 0 10px;
+      padding-top: min(calc(100vw / 375 * 260), calc(var(--max-width) / 375 * 260));
+      text-align: center;
+      word-break: break-word;
+    }
+    .circle-list {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 100px;
+    }
+    .circle-item {
+      display: inline-flex;
+      min-width: 60px;
+      max-width: 80px;
+      height: 60px;
+      text-align: center;
+      /* line-height: 60px; */
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #1c5ff4;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: inset 0 6px 12px rgb(255 255 255 / 66%);
+    }
+    .circle-item:nth-child(2), .circle-item:nth-child(3) {
+      margin-top: 74px;
+    }
+    .circle-item:nth-child(4) {
+      font-size: 14px;
+    }
+    .btn-container {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 40px;
+      text-align: center;
+    }
+    .btn-download {
+      background: #FFFFFF;
+      border-radius: 19px;
+      font-size: 14px;
+      color: #3F80F7;
+      letter-spacing: 0;
+      font-weight: 400;
+      width: 270px;
+      max-width: 90vw;
+      height: 36px;
+      text-align: center;
+      outline: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="download-container">
+    <div class="label">全球领先的区块链大数据平台</div>
+    <ul class="circle-list">
+      <li class="circle-item">更快</li>
+      <li class="circle-item">更准</li>
+      <li class="circle-item">更全</li>
+      <li class="circle-item">更智能</li>
+    </ul>
+    <div class="btn-container">
+      <a href="https://www.avestorage.cloud/app/ave.ai.apk"><button class="btn-download">立即下载</button></a>
+    </div>
+  </main>
+  <script>
+    function getLocale() {
+      const browserLanguage = (navigator.systemLanguage || navigator.language || navigator.browserLanguage)
+      const lang = {
+        'en': 'en',
+        'en-US': 'en',
+        'zh-CN': 'zh-cn',
+        'zh-TW': 'zh-tw'
+      }
+      return lang[browserLanguage] || 'en'
+    }
+    function __main() {
+      let parsedUrl = new URL(window.location.href)
+      let lang = parsedUrl?.searchParams?.get?.('lang') || localStorage?.language || getLocale()
+      let i18n = {
+        'zh-cn': {
+          leadingBlockchainBigDataPlatform: '全球领先的区块链大数据平台',
+          faster: '更快',
+          moreAccurate: '更准',
+          moreComplete: '更全',
+          smarter: '更智能',
+          downloadNow: '立即下载',
+
+        },
+        'zh-tw': {
+          leadingBlockchainBigDataPlatform: '全球領先的區塊鏈大數據平台',
+          faster: '更快',
+          moreAccurate: '更準',
+          moreComplete: '更全',
+          smarter: '更智能',
+          downloadNow: '立即下載',
+        },
+        en: {
+          leadingBlockchainBigDataPlatform: "The world's leading blockchain big data platform",
+          faster: 'Faster',
+          moreAccurate: 'More Accurate',
+          moreComplete: 'More Complete',
+          smarter: 'Smarter',
+          downloadNow: 'Download Now',
+        }
+      }
+      let t = i18n[lang]
+      let u = navigator.userAgent
+      let isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+      let s3BaseUrl = localStorage.getItem('s3BaseUrl')
+      let domain = s3BaseUrl || 'https://www.avestorage.cloud/'
+      let link = isIos ? 'https://apps.apple.com/sg/app/aveai/id1645676067' : (domain + 'app/ave.ai.apk')
+
+      let html = `<div class="label">${t.leadingBlockchainBigDataPlatform}</div>
+        <ul class="circle-list">
+          <li class="circle-item">${t.faster}</li>
+          <li class="circle-item">${t.moreAccurate}</li>
+          <li class="circle-item">${t.moreComplete}</li>
+          <li class="circle-item">${t.smarter}</li>
+        </ul>
+        <div class="btn-container">
+          <a href="${link}"><button class="btn-download">${t.downloadNow}</button></a>
+        </div>`
+      document.querySelector('.download-container').innerHTML = html
+    }
+    __main()
+  </script>
+</body>
+</html>
